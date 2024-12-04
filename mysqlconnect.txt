@@ -1,0 +1,7 @@
+#mysql -h hostname -u rdscmoldb -p'passwd' -A
+#mysql -h hostname -u rdscmoldb -p'passwd' -A
+#mysql -h hostname -u rdscrmdb -p'passwd' -A
+#mysql -h  -u admin -p'Microservice_cm24' -A;
+#mysql -h cis-ars-db.inside.creditmantri.com -u caadmin -p'Cisarsservice_cm24' -A
+#mysql -h hostname -u rdscmoldb -p'aSdaKUq2eBX995rv' -A -e "SELECT CONCAT('CALL mysql.rds_kill_query(', id, ');'),time,info FROM INFORMATION_SCHEMA.PROCESSLIST where time > 200 order by time desc;;"
+#mysql -h hostname -u verificadmin -p'AESMqLLc6sbJ' -A

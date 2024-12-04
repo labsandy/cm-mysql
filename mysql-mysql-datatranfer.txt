@@ -1,0 +1,1 @@
+mysqldump --single-transaction --quick -h cis-ars-db.creditmantri.com -u caadmin -p'Cisarsse' --no-tablespaces --skip-triggers --set-gtid-purged=OFF cisars cis_lead_contacts | mysql -h crm-db.amazonaws.com -u crm -p'password' crm_cisars
