@@ -1,0 +1,1123 @@
+ https://www.mysqltutorial.org/mysql-basics/ 
+
+ 
+
+SELECT DATABASE();   to check the db name  
+
+show databases;  to show db list  
+
+use <db_name >;  to select db 
+
+SELECT * FROM <table_name> ; to select table 
+
+SELECT COUNT(*) FROM <tbale_name> 
+
+mysql -h crmdbr.inside.creditmantri.com -u rdscrmdb -p'yhH!L4QRn$6T' -A 
+
+DESCRIBE <table_name>;    check table structure   
+
+ 
+
+1 
+
+Units (Once) 
+
+Digit 1 
+
+10 
+
+Tens (Tence) 
+
+Digit 2 
+
+100 
+
+Hundreds 
+
+Digit 3 
+
+1000 
+
+Thousands 
+
+Digit 4 
+
+10000 
+
+Tens of Thousands 
+
+Digit 5 
+
+100000 
+
+Hundreds of Thousands 
+
+Digit 6 
+
+1000000 
+
+Millions 
+
+Digit 7 
+
+1000000000 
+
+Billions 
+
+Digit 10 
+
+0.1 
+
+Tenths 
+
+1st decimal place 
+
+0.01 
+
+Hundredths 
+
+2nd decimal place 
+
+0001 
+
+Thousandths 
+
+3rd decimal place 
+
+0.0001 
+
+Ten Thousandths 
+
+4th decimal place 
+
+0.00001 
+
+Hundred Thousandths 
+
+5th decimal place 
+
+0.000001 
+
+Millionths 
+
+6th decimal place 
+
+0.000000001 
+
+Billionth 
+
+9th decimal place 
+
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'user_password'; 
+
+CREATE USER 'newuser'@'10.8.0.5' IDENTIFIED BY 'user_password'; 
+
+ To create a user that can connect from any host, use the '%' wildcard as a host part: 
+
+ 
+
+9.CREATE USER 'newuser'@'%' IDENTIFIED BY 'user_password'; 
+
+10.SHOW VARIABLES LIKE 'max_connections'; 
+
+11.show global variables like '%connections%' 
+
+12.show status like '%connected%' 
+
+13.show full processlist; 
+
+ 
+
+14. Upsert    —>     The idea is that when you insert a new row into the table, PostgreSQL will update the row if it already exists, otherwise, it will insert the new row. That is why we call the action is upsert (the combination of update or insert) 
+
+ 
+
+15. UPDATE —-   The UPDATE statement is used to modify the existing records in a table. 
+
+ 
+
+16. Warehouse connect  
+
+ 
+
+export PGPASSWORD='Q5c925$T5' 
+
+psql -d cmwarehouse -U admin -p 5479 
+
+select * from leads order by id desc limit 1; 
+
+ 
+
+16  ALTER USER 'karthikraja'@'%' IDENTIFIED BY 'karthikraja@123'; 
+
+17. Use the source command to load data into the MySQL Server: 
+
+mysql> source c:\temp\mysqlsampledatabase.sql 
+
+ 
+
+ 18mysql db_name < backup-file.sql 
+
+ 
+
+19. mysql -u <username> -p <databasename> < <filename.sql> 
+
+ 
+
+20. mysql> use db_name;  
+
+    mysql> source backup-file.sql; ( import dump in the terminal)  
+
+21. Database Connect format: 
+
+mysql -h <host_name> -u <user_name> -p <password>; 
+
+22. mysqldump -h <hostname> -u <username> -p<passwd> #dbname > #filename 
+
+ 
+
+GRANT readaccess TO tomek; 
+
+REVOKE all privileges ON ALL TABLES IN schema public 
+
+FROM kavitha; 
+
+ 
+
+ 
+
+ 
+
+Connect to different port using MySql Command Line Client 
+
+ 
+
+mysql -h 127.0.0.1 -P 3307 -u user_name -p database_name 
+
+ 
+
+-P = port  
+
+ 
+
+https://tableplus.com/blog/2018/04/postgresql-how-to-create-read-only-user.html 
+
+ 
+
+https://ubiq.co/database-blog/how-to-create-read-only-user-in-postgresql/ 
+
+https://www.javatpoint.com/postgresql-view 
+
+ 
+
+https://tableplus.com/blog/2018/04/postgresql-how-to-grant-access-to-users.html 
+
+ 
+
+mysql -h 13.232.239.46 -u admin -P 3316 -p'mypassword' -A 
+
+ 
+
+ 
+
+GRANT readaccess TO tomek; 
+
+REVOKE all privileges ON ALL TABLES IN schema public 
+
+FROM kavitha; 
+
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO santhosh; 
+
+ 
+
+ 
+
+How to download all database in single CMD:-  
+
+mysqldump --column-statistics=0 -u cmms -p -h 52.66.99.210 -P 3307 --all-databases  > all_databases.sql 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+https://chartio.com/resources/tutorials/how-to-get-the-size-of-a-table-in-mysql/ 
+
+https://stackoverflow.com/questions/9620198/how-to-get-the-sizes-of-the-tables-of-a-mysql-database 
+
+ 
+
+mysqldump -h uatdb.creditmantri.co.in -u cmms -p'2T2WJh6R#LAZ' crm_cisars > crm_cisars.sql 
+
+ 
+
+ 
+
+how to export and import table from mysql using port :- 
+
+ 
+
+mysqldump -h localhost -P 3306 -u myusername -p mydatabase mytable > mytable_backup.sql 
+
+ 
+
+ 
+
+mysqldump -h localhost -P PORT_NUMBER -u USERNAME -p DATABASE_NAME TABLE_NAME > TABLE_NAME.sql 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+mysql -h localhost -P PORT_NUMBER -u USERNAME -p DATABASE_NAME < TABLE_NAME.sql 
+
+ 
+
+Export MySQL Database Table to CSV: 
+
+ 
+
+mysql -u your_username -p -e "SELECT * FROM your_database.your_table" | sed 's/\t/","/g;s/^/"/;s/$/"/;s/\n//g' > output.csv 
+
+ 
+
+ 
+
+Import CSV Data into MySQL Database Table: 
+
+ 
+
+mysql --local_infile=1 -h 52.66.99.210 -u cmms -p'2T2WJh6R#LAZ' -A -P 3316 
+
+ 
+
+mysql -u your_username -p -e "USE your_database; LOAD DATA INFILE '/path/to/your_csv_file.csv' INTO TABLE your_table FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 LINES;" 
+
+ 
+
+mysqlimport --local -u caadmin -h cis-ars-db.inside.creditmantri.com -p --fields-terminated-by=',' --fields-enclosed-by='"' --lines-terminated-by='\n' cisars /home/ubuntu/sandy/cm_cp_processed/collection_logs_temp.csv 
+
+ 
+
+ 
+
+ 
+
+Cdc :  
+
+ 
+
+mysql -h 52.66.114.78 -P 3322 -u caadmin -p cisars -e "SELECT * FROM cis_lead_logs WHERE created_at >= '2024-08-16 00:00:00'" | sed 's/\t/,/g' > cis_lead_logs.csv 
+
+ 
+
+ 
+
+Working:  
+
+ 
+
+mysql -h cis-ars-db.inside.creditmantri.com  -u caadmin -p cisars -e "SELECT * FROM cis_lead_logs limit 1" | sed 's/\t/,/g' > cis_lead_logs.csv 
+
+ 
+
+mysql -h your-rds-endpoint -P 3306 -u your_username -p your_database_name -e "SELECT * FROM your_table" | sed 's/\t/,/g' > output_table.csv 
+
+ 
+
+ 
+
+Working CMD :-  
+
+ 
+
+mysqldump --single-transaction --quick -h cis-ars-db.inside.creditmantri.com -u caadmin -p'Cisarsservice_cm24' --no-tablespaces --skip-triggers --set-gtid-purged=OFF cisars cis_customer_engagement_logs | mysql -h crm-db-new.c2crlxbwioks.ap-south-1.rds.amazonaws.com -u rdscrmdb -p'Crmservice_cm24' crm_cisars 
+
+ 
+
+Working CMD :- 
+
+ 
+
+mysqldump --single-transaction --quick -h cis-ars-db.inside.creditmantri.com -u caadmin --no-tablespaces --skip-triggers --set-gtid-purged=OFF  -p'Cisarsservice_cm24' cisars cis_lead_logs --where="etl_ts >= '2024-08-16 00:00:00'" > cis_lead_logs.sql 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Migrate only date : - 
+
+ 
+
+mysqldump --single-transaction --quick -h cmoldbw.inside.creditmantri.com -u rdscmoldb -p'aSdaKUq2eBX995rv'  --no-tablespaces --skip-triggers --set-gtid-purged=OFF --no-create-info cmolbeta cfp_lead_logs | mysql -h crm-db-new.c2crlxbwioks.ap-south-1.rds.amazonaws.com -u rdscrmdb -p'Crmservice_cm24' crm_cisars 
+
+ 
+
+ 
+
+ 
+
+ 
+
+mysqldump -h cis-ars-db.inside.creditmantri.com  -u caadmin -p'Cisarsservice_cm24' --no-tablespaces --skip-triggers --set-gtid-purged=OFF cisars users_additional_info > users_additional_info.sql 
+
+mysql -h crm-db-new.c2crlxbwioks.ap-south-1.rds.amazonaws.com -u rdscrmdb -p'Crmservice_cm24' crm_cisars < users.sql 
+
+ 
+
+ 
+
+ 
+
+General Options 
+
+Option 
+
+Description 
+
+--host (-h) 
+
+Specifies the MySQL server hostname. Defaults to localhost. 
+
+--user (-u) 
+
+Specifies the username for connecting to the database. 
+
+--password (-p) 
+
+Specifies the password for the user. Use -p without a value to prompt for the password. 
+
+--port (-P) 
+
+Specifies the port number for the MySQL server. Default is 3306. 
+
+ 
+
+ 
+
+ 
+
+Output and File Options 
+
+Option 
+
+Description 
+
+--result-file 
+
+Writes the output directly to a file. 
+
+--compact 
+
+Produces more compact output by skipping comments and headers. 
+
+--no-create-info 
+
+Exports only data, omitting the CREATE TABLE statements. 
+
+--no-data 
+
+Exports only the schema, omitting all data. 
+
+--skip-comments 
+
+Removes comments from the output. 
+
+ 
+
+Performance Optimization Options 
+
+Option 
+
+Description 
+
+--quick 
+
+Fetches rows directly from the server without buffering them in memory. Useful for large tables. 
+
+--single-transaction 
+
+Ensures a consistent snapshot by wrapping the dump in a single transaction. 
+
+--lock-tables 
+
+Locks all tables for the duration of the dump (enabled by default, use --skip-lock-tables to disable). 
+
+--add-locks 
+
+Adds LOCK TABLES and UNLOCK TABLES statements around each table dump. 
+
+ 
+
+ 
+
+Compatibility and Constraint Handling 
+
+Option 
+
+Description 
+
+--set-gtid-purged 
+
+Controls whether GTIDs are included in the output (OFF, ON, AUTO). 
+
+--skip-triggers 
+
+Excludes triggers from the dump. 
+
+--no-tablespaces 
+
+Prevents dumping of CREATE LOGFILE GROUP and CREATE TABLESPACE statements. 
+
+--disable-keys 
+
+Adds /*!40000 ALTER TABLE ... DISABLE KEYS */ for faster imports. 
+
+--skip-add-drop-table 
+
+Omits the DROP TABLE IF EXISTS statements. 
+
+--skip-add-locks 
+
+Omits LOCK TABLES and UNLOCK TABLES statements. 
+
+ 
+
+ 
+
+Data Selection Options 
+
+Option 
+
+Description 
+
+--where (-w) 
+
+Exports only rows matching the specified condition (e.g., --where="id > 100"). 
+
+--tables 
+
+Specifies one or more tables to dump (e.g., --tables table1 table2). 
+
+--databases 
+
+Dumps one or more databases, preserving database-specific commands. 
+
+--all-databases 
+
+Dumps all databases on the server. 
+
+ 
+
+ 
+
+Format and Compatibility Options 
+
+Option 
+
+Description 
+
+--compatible 
+
+Generates output that is compatible with specific databases (e.g., --compatible=postgresql). 
+
+--hex-blob 
+
+Dumps binary columns using hexadecimal notation. 
+
+--tz-utc 
+
+Sets the timezone to UTC for the dump. 
+
+--fields-terminated-by 
+
+Specifies the field delimiter for CSV exports. 
+
+ 
+
+ 
+
+General Options 
+
+Option 
+
+Description 
+
+Example 
+
+--host (-h) 
+
+Specifies the MySQL server hostname. Defaults to localhost. 
+
+mysqldump -h yourserver.com -u root -p my_database > dump.sql 
+
+--user (-u) 
+
+Specifies the username for connecting to the database. 
+
+mysqldump -u admin -p my_database > dump.sql 
+
+--password (-p) 
+
+Specifies the password for the user. Use -p without a value to prompt for the password. 
+
+mysqldump -p my_database > dump.sql 
+
+--port (-P) 
+
+Specifies the port number for the MySQL server. Default is 3306. 
+
+mysqldump -P 3307 -u root -p my_database > dump.sql 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Output and File Options 
+
+Option 
+
+Description 
+
+Example 
+
+--result-file 
+
+Writes the output directly to a file. 
+
+mysqldump -u root -p my_database --result-file=dump.sql 
+
+--compact 
+
+Produces more compact output by skipping comments and headers. 
+
+mysqldump -u root -p --compact my_database > compact_dump.sql 
+
+--no-create-info 
+
+Exports only data, omitting the CREATE TABLE statements. 
+
+mysqldump -u root -p --no-create-info my_database > data_only.sql 
+
+--no-data 
+
+Exports only the schema, omitting all data. 
+
+mysqldump -u root -p --no-data my_database > schema_only.sql 
+
+--skip-comments 
+
+Removes comments from the output. 
+
+mysqldump -u root -p --skip-comments my_database > no_comments.sql 
+
+ 
+
+ 
+
+ 
+
+Performance Optimization Options 
+
+Option 
+
+Description 
+
+Example 
+
+--quick 
+
+Fetches rows directly from the server without buffering them in memory. Useful for large tables. 
+
+mysqldump -u root -p --quick my_database > dump.sql 
+
+--single-transaction 
+
+Ensures a consistent snapshot by wrapping the dump in a single transaction. 
+
+mysqldump -u root -p --single-transaction my_database > dump.sql 
+
+--lock-tables 
+
+Locks all tables for the duration of the dump. Enabled by default. 
+
+mysqldump -u root -p --lock-tables my_database > locked_dump.sql 
+
+--add-locks 
+
+Adds LOCK TABLES and UNLOCK TABLES statements around each table dump. 
+
+mysqldump -u root -p --add-locks my_database > locked_dump.sql 
+
+ 
+
+ 
+
+Compatibility and Constraint Handling 
+
+Option 
+
+Description 
+
+Example 
+
+--set-gtid-purged 
+
+Controls whether GTIDs are included in the output (OFF, ON, AUTO). 
+
+mysqldump -u root -p --set-gtid-purged=OFF my_database > gtid_dump.sql 
+
+--skip-triggers 
+
+Excludes triggers from the dump. 
+
+mysqldump -u root -p --skip-triggers my_database > no_triggers.sql 
+
+--no-tablespaces 
+
+Prevents dumping of CREATE LOGFILE GROUP and CREATE TABLESPACE statements. 
+
+mysqldump -u root -p --no-tablespaces my_database > no_tablespaces.sql 
+
+--disable-keys 
+
+Adds /*!40000 ALTER TABLE ... DISABLE KEYS */ for faster imports. 
+
+mysqldump -u root -p --disable-keys my_database > faster_import.sql 
+
+--skip-add-drop-table 
+
+Omits the DROP TABLE IF EXISTS statements. 
+
+mysqldump -u root -p --skip-add-drop-table my_database > no_drop_table.sql 
+
+ 
+
+ 
+
+ 
+
+Data Selection Options 
+
+Option 
+
+Description 
+
+Example 
+
+--where (-w) 
+
+Exports only rows matching the specified condition (e.g., --where="id > 100"). 
+
+mysqldump -u root -p --where="id > 100" my_database my_table > filtered_data.sql 
+
+--tables 
+
+Specifies one or more tables to dump. 
+
+mysqldump -u root -p --tables table1 table2 > selected_tables.sql 
+
+--databases 
+
+Dumps one or more databases, preserving database-specific commands. 
+
+mysqldump -u root -p --databases db1 db2 > multiple_databases.sql 
+
+--all-databases 
+
+Dumps all databases on the server. 
+
+mysqldump -u root -p --all-databases > all_databases.sql 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Format and Compatibility Options 
+
+Option 
+
+Description 
+
+Example 
+
+--compatible 
+
+Generates output that is compatible with specific databases (e.g., --compatible=postgresql). 
+
+mysqldump -u root -p --compatible=postgresql my_database > compatible_dump.sql 
+
+--hex-blob 
+
+Dumps binary columns using hexadecimal notation. 
+
+mysqldump -u root -p --hex-blob my_database > hex_dump.sql 
+
+--tz-utc 
+
+Sets the timezone to UTC for the dump. 
+
+mysqldump -u root -p --tz-utc my_database > utc_dump.sql 
+
+--fields-terminated-by 
+
+Specifies the field delimiter for CSV exports. 
+
+mysqldump -u root -p --fields-terminated-by=',' my_database my_table > csv_dump.csv 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Exporting a large table to a CSV file in MySQL can be done efficiently using either SELECT ... INTO OUTFILE directly within MySQL or the mysqldump command. Here's how you can achieve this: 
+
+ 
+
+1. Using SELECT ... INTO OUTFILE (Recommended for Performance) 
+
+Steps: 
+
+Log in to MySQL: 
+
+bash 
+
+Copy code 
+
+mysql -u username -p -h hostname database_name 
+ 
+
+Run the SELECT ... INTO OUTFILE query: 
+
+sql 
+
+Copy code 
+
+SELECT *  
+INTO OUTFILE '/path/to/your/output.csv' 
+FIELDS TERMINATED BY ','  
+ENCLOSED BY '"'  
+LINES TERMINATED BY '\n' 
+FROM your_table; 
+ 
+
+Explanation: 
+
+/path/to/your/output.csv: Specify the absolute path to the output CSV file. Ensure the MySQL server has write permissions for this directory. 
+
+FIELDS TERMINATED BY ',': Sets a comma as the delimiter between fields. 
+
+ENCLOSED BY '"': Encloses text fields in double quotes. 
+
+LINES TERMINATED BY '\n': Each row ends with a newline character. 
+
+Notes: 
+
+The OUTFILE method writes directly from the database server, so you must have the required permissions. 
+
+The directory path must be accessible by the MySQL server user. 
+
+ 
+
+2. Using mysqldump with Transformation to CSV 
+
+If you don't have access to SELECT ... INTO OUTFILE or want to export remotely: 
+
+Command: 
+
+bash 
+
+Copy code 
+
+mysqldump -u username -p -h hostname database_name \ 
+  --no-create-info --tab=/path/to/output_dir --fields-terminated-by=',' --fields-enclosed-by='"' \ 
+  --lines-terminated-by='\n' your_table 
+ 
+
+Explanation: 
+
+--no-create-info: Exports only the data, skipping CREATE TABLE statements. 
+
+--tab=/path/to/output_dir: Exports data into a tab-separated file. 
+
+--fields-terminated-by=',': Sets a comma as the delimiter. 
+
+--fields-enclosed-by='"': Encloses text fields in double quotes. 
+
+your_table: Specify the table to export. 
+
+Post-export: 
+
+Rename or convert the tab-separated file into a .csv file, if necessary. 
+
+ 
+
+3. Using MySQL in the Terminal with Output Redirection 
+
+Command: 
+
+bash 
+
+Copy code 
+
+mysql -u username -p -h hostname -e "SELECT * FROM database_name.your_table;" \ 
+  | sed 's/\t/,/g' > output.csv 
+ 
+
+Explanation: 
+
+mysql -e: Executes a query and outputs results to the terminal. 
+
+sed 's/\t/,/g': Replaces tab characters with commas to format as CSV. 
+
+> output.csv: Redirects the output to a CSV file. 
+
+ 
+
+4. For Large Tables – Export in Chunks 
+
+For very large tables, exporting in chunks can prevent memory issues: 
+
+Script Example (Bash): 
+
+bash 
+
+Copy code 
+
+#!/bin/bash 
+ 
+DB_HOST="hostname" 
+DB_USER="username" 
+DB_PASS="password" 
+DB_NAME="database_name" 
+TABLE_NAME="your_table" 
+CHUNK_SIZE=100000 
+OUTPUT_FILE="output.csv" 
+ 
+# Get total rows in the table 
+TOTAL_ROWS=$(mysql -u $DB_USER -p$DB_PASS -h $DB_HOST -N -e "SELECT COUNT(*) FROM $DB_NAME.$TABLE_NAME;") 
+ 
+# Export in chunks 
+OFFSET=0 
+while [ $OFFSET -lt $TOTAL_ROWS ]; do 
+    mysql -u $DB_USER -p$DB_PASS -h $DB_HOST -N -e \ 
+    "SELECT * FROM $DB_NAME.$TABLE_NAME LIMIT $OFFSET, $CHUNK_SIZE;" \ 
+    | sed 's/\t/,/g' >> $OUTPUT_FILE 
+    OFFSET=$((OFFSET + CHUNK_SIZE)) 
+done 
+ 
+echo "Export completed: $OUTPUT_FILE" 
+ 
+
+Explanation: 
+
+LIMIT $OFFSET, $CHUNK_SIZE: Fetches rows in chunks to avoid overloading memory. 
+
+>>: Appends each chunk to the output file. 
+
+ 
+
+ 
+
+To export selective columns from a MySQL table, you can modify your export query to specify the required columns instead of selecting all columns. Below are methods for exporting specific columns. 
+
+ 
+
+1. Using SELECT ... INTO OUTFILE 
+
+Steps: 
+
+Log in to MySQL: 
+
+bash 
+
+Copy code 
+
+mysql -u username -p -h hostname database_name 
+ 
+
+Run the query to export specific columns: 
+
+sql 
+
+Copy code 
+
+SELECT column1, column2, column3  
+INTO OUTFILE '/path/to/your/output.csv' 
+FIELDS TERMINATED BY ','  
+ENCLOSED BY '"'  
+LINES TERMINATED BY '\n' 
+FROM your_table; 
+ 
+
+Explanation: 
+
+Replace column1, column2, column3 with the names of the columns you want to export. 
+
+FIELDS TERMINATED BY ',': Uses a comma as the delimiter between fields. 
+
+ENCLOSED BY '"': Encloses text fields in double quotes. 
+
+LINES TERMINATED BY '\n': Each row ends with a newline. 
+
+ 
+
+2. Using mysqldump with Specific Columns 
+
+mysqldump does not directly support exporting specific columns, but you can combine it with a SQL query. 
+
+Command: 
+
+bash 
+
+Copy code 
+
+mysql -u username -p -h hostname -D database_name -e \ 
+"SELECT column1, column2, column3 FROM your_table" | \ 
+sed 's/\t/,/g' > output.csv 
+ 
+
+Explanation: 
+
+SELECT column1, column2, column3: Replace these with your desired column names. 
+
+sed 's/\t/,/g': Converts tab-separated output into CSV by replacing tabs with commas. 
+
+ 
+
+3. Using a Bash Script for Large Tables (Export in Chunks) 
+
+If your table is large, export in chunks to avoid memory issues. 
+
+Script Example: 
+
+bash 
+
+Copy code 
+
+#!/bin/bash 
+ 
+DB_HOST="hostname" 
+DB_USER="username" 
+DB_PASS="password" 
+DB_NAME="database_name" 
+TABLE_NAME="your_table" 
+CHUNK_SIZE=100000 
+OUTPUT_FILE="output.csv" 
+ 
+# Get the total rows 
+TOTAL_ROWS=$(mysql -u $DB_USER -p$DB_PASS -h $DB_HOST -N -e "SELECT COUNT(*) FROM $DB_NAME.$TABLE_NAME;") 
+ 
+# Export in chunks 
+OFFSET=0 
+while [ $OFFSET -lt $TOTAL_ROWS ]; do 
+    mysql -u $DB_USER -p$DB_PASS -h $DB_HOST -N -e \ 
+    "SELECT column1, column2, column3 FROM $DB_NAME.$TABLE_NAME LIMIT $OFFSET, $CHUNK_SIZE;" \ 
+    | sed 's/\t/,/g' >> $OUTPUT_FILE 
+    OFFSET=$((OFFSET + CHUNK_SIZE)) 
+done 
+ 
+echo "Export completed: $OUTPUT_FILE" 
+ 
+
+Explanation: 
+
+Replace column1, column2, column3 with the columns you want to export. 
+
+Adjust CHUNK_SIZE to control how many rows are exported at once. 
+
+ 
+
+4. Using Python for Greater Flexibility 
+
+For more advanced processing, use Python's pymysql library to export specific columns. 
+
+Example Python Script: 
+
+python 
+
+Copy code 
+
+import pymysql 
+import csv 
+ 
+# Database connection 
+conn = pymysql.connect( 
+    host="hostname", 
+    user="username", 
+    password="password", 
+    database="database_name" 
+) 
+ 
+# Query 
+query = "SELECT column1, column2, column3 FROM your_table" 
+ 
+# Export to CSV 
+output_file = "output.csv" 
+with conn.cursor() as cursor: 
+    cursor.execute(query) 
+    rows = cursor.fetchall() 
+    with open(output_file, "w", newline="") as f: 
+        writer = csv.writer(f) 
+        writer.writerow([i[0] for i in cursor.description])  # Write headers 
+        writer.writerows(rows) 
+ 
+print(f"Export completed: {output_file}") 
+ 
+
+ 
+
+5. With SELECT ... INTO DUMPFILE (Alternative Approach) 
+
+Another method involves exporting a raw dump of the query results. 
+
+SQL Command: 
+
+sql 
+
+Copy code 
+
+SELECT column1, column2, column3 
+INTO DUMPFILE '/path/to/your/output.dump' 
+FROM your_table; 
+ 
+
+This method creates a binary dump file, which is not human-readable. 
+
+ 
+
+ 
+
+ 
